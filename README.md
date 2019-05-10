@@ -34,7 +34,7 @@ npm install
 
 npm run dev
 
-访问: http://localhost:8010（如果已启动前台程序，则不需打开此地址）
+访问: http://localhost:8010
 
 ```
 
