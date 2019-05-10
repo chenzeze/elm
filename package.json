@@ -28,7 +28,7 @@
     "cross-env": "^5.0.0",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
-    "express-winston": "^2.3.0",
+    "express-winston": "^2.6.0",
     "formidable": "^1.1.1",
     "gm": "^1.23.0",
     "marked": "^0.3.6",
@@ -42,7 +42,7 @@
     "sha1": "^1.1.1",
     "time-formater": "1.0.1",
     "time-stamp": "^2.0.0",
-    "winston": "^2.3.1"
+    "winston": "^2.4.4"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",

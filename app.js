@@ -1,6 +1,9 @@
 import express from 'express';
 import config from 'config-lite';
 import chalk from 'chalk';
+import winston from 'winston';
+import expressWinston from 'express-winston';
+// import log4js from './log';
 import router from './routes/index';
 import db from './mongodb/db';
 import {
@@ -28,8 +31,33 @@ app.all('*', (req, res, next) => {
         next();
     }
 });
-
+// 正常请求的日志
+app.use(expressWinston.logger({
+    transports: [
+        new(winston.transports.Console)({
+            json: true,
+            colorize: true
+        }),
+        new winston.transports.File({
+            filename: 'logs/success.log'
+        })
+    ]
+}))
+//路由
 router(app);
+// 错误请求的日志
+app.use(expressWinston.errorLogger({
+    transports: [
+        new winston.transports.Console({
+            json: true,
+            colorize: true
+        }),
+        new winston.transports.File({
+            filename: 'logs/error.log'
+        })
+    ]
+}))
+
 app.use(express.static('./public'));
 app.listen(config.port, () => {
     console.log(

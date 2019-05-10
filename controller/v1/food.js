@@ -228,7 +228,7 @@ class Food extends BaseComponent {
                     status: 0,
                     type: 'ERROR_DATA',
                     message: '添加食品失败'
-                })
+                });
                 return
             }
 
