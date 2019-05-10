@@ -1,7 +1,7 @@
 # node-elm 接口文档
 ```
 
-baseUrl: https://elm.cangdu.org
+baseUrl: http://localhost:8010
 
 ```
 
@@ -79,11 +79,11 @@ baseUrl: https://elm.cangdu.org
 
 #### 请求URL:  
 ```
-https://elm.cangdu.org/v1/cities
+http://localhost:8010/cities
 ```
 
 #### 示例：
- [https://elm.cangdu.org/v1/cities?type=guess](https://elm.cangdu.org/v1/cities?type=guess)
+ [http://localhost:8010/cities?type=guess](http://localhost:8010/cities?type=guess)
 
 #### 请求方式: 
 ```
@@ -100,15 +100,15 @@ GET
 
 ```javascript
 {
-  id: 1,
-  name: "上海",
-  abbr: "SH",
-  area_code: "021",
-  sort: 1,
-  latitude: 31.23037,
-  longitude: 121.473701,
-  is_map: true,
-  pinyin: "shanghai"
+    "pinyin": "guangzhou",
+    "is_map": true,
+    "longitude": 113.264359,
+    "latitude": 23.12908,
+    "sort": 6,
+    "area_code": "020",
+    "abbr": "GZ",
+    "name": "广州",
+    "id": 4
 }
 ```
 
@@ -116,11 +116,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/cities/:id
+http://localhost:8010/cities/:id
 ```
 
 #### 示例：
-[https://elm.cangdu.org/v1/cities/1](https://elm.cangdu.org/v1/cities/1)
+[http://localhost:8010/cities/1](http://localhost:8010/cities/1)
 
 #### 请求方式：
 ```
@@ -136,15 +136,15 @@ GET
 #### 返回示例：
 ```javascript
 {
-  id: 1,
-  name: "上海",
-  abbr: "SH",
-  area_code: "021",
-  sort: 1,
-  latitude: 31.23037,
-  longitude: 121.473701,
-  is_map: true,
-  pinyin: "shanghai"
+    "pinyin": "shanghai",
+    "is_map": true,
+    "longitude": 121.473701,
+    "latitude": 31.23037,
+    "sort": 1,
+    "area_code": "021",
+    "abbr": "SH",
+    "name": "上海",
+    "id": 1
 }
 ```
 
@@ -152,11 +152,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/pois
+http://localhost:8010/cities/pois
 ```
 
 #### 示例：
-[https://elm.cangdu.org/v1/pois?city_id=1&keyword=迪士尼&type=search](https://elm.cangdu.org/v1/pois?city_id=1&keyword=%E8%BF%AA%E5%A3%AB%E5%B0%BC&type=search)
+[http://localhost:8010/cities/pois?city_id=1&keyword=迪士尼&type=search](http://localhost:8010/cities/pois?city_id=1&keyword=迪士尼&type=search)
 
 #### 请求方式：
 ```
@@ -197,11 +197,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v2/pois/:geohash
+http://localhost:8010/cities/exactaddress/:geohash
 ```
 
 #### 示例：
-[https://elm.cangdu.org/v2/pois/31.22967,121.4762](https://elm.cangdu.org/v2/pois/31.22967,121.4762)
+[http://localhost:8010/cities/exactaddress/31.22967,121.4762](http://localhost:8010/cities/exactaddress/31.22967,121.4762)
 
 #### 请求方式：
 ```
@@ -218,12 +218,12 @@ GET
 
 ```javascript
 {
-  address: "上海市黄浦区西藏中路",
-  city: "上海市",
-  geohash: "31.22967,121.4762",
-  latitude: "31.22967",
-  longitude: "121.4762",
-  name: "黄浦区上海人民广场"
+    "address": "上海市黄浦区人民大道201号",
+    "city": "上海市",
+    "geohash": "31.22967,121.4762",
+    "latitude": "31.22967",
+    "longitude": "121.4762",
+    "name": "上海人民广场"
 }
 ```
 
@@ -231,11 +231,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v2/index_entry
+http://localhost:8010/restaurants/foods
 ```
 
 #### 示例：
-[https://elm.cangdu.org/v2/index_entry](https://elm.cangdu.org/v2/index_entry)
+[http://localhost:8010/restaurants/foods](http://localhost:8010/restaurants/foods)
 
 #### 请求方式：
 ```
@@ -251,28 +251,40 @@ GET
 
 ```javascript
 [
-  {
-    id: 1,
-    is_in_serving: true,
-    description: "0元早餐0起送，每天都有新花样。",
-    title: "预订早餐",
-    link: "",
-    image_url: "/d/49/7757ff22e8ab28e7dfa5f7e2c2692jpeg.jpeg",
-    icon_url: "",
-    title_color: "",
-    __v: 0
-  },
-  {
-    id: 65,
-    is_in_serving: true,
-    description: "",
-    title: "土豪推荐",
-    image_url: "/d/49/7757ff22e8ab28e7dfa5f7e2c2692jpeg.jpeg",
-    link: "",
-    icon_url: "",
-    title_color: "",
-    __v: 0
-  },
+    {
+        "_id": "5c827560124f18867ccb08bf",
+        "id": 1171,
+        "name": "好吃的",
+        "restaurant_id": 1,
+        "category_id": 2306,
+        "menu_id": 12,
+        "attributes": [
+            {
+                "icon_name": "新",
+                "icon_color": "5ec452"
+            },
+            {
+                "icon_name": "招牌",
+                "icon_color": "f07373"
+            }
+        ],
+        "__v": 0,
+        "specs": [],
+        "activities": [],
+        "attrs": [],
+        "description": "是的分身乏术分身乏术方式",
+        "satisfy_count": 31,
+        "original_price": 0,
+        "packing_fee": 0,
+        "rating": 4.4,
+        "price": 20,
+        "sold_out": false,
+        "month_sales": 907,
+        "stock": 1000,
+        "image_path": "1661a8e8aa318572.png",
+        "rating_id": 12,
+        "pinyin_name": "haochide"
+    },
   ... 共n条数据
 ]
 ```
@@ -281,11 +293,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/restaurants
+http://localhost:8010/restaurants
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762](https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762)
+[http://localhost:8010/restaurants?latitude=1&longitude=1](http://localhost:8010/restaurants?latitude=1&longitude=1)
 
 #### 请求方式：
 ```
@@ -418,11 +430,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v4/restaurants
+http://localhost:8010/v4/restaurants
 ```
 
 #### 示例：
-[https://elm.cangdu.org/v4/restaurants?geohash=31.22967,121.4762&keyword=肯德基](https://elm.cangdu.org/v4/restaurants?geohash=31.22967,121.4762&keyword=肯德基)
+[http://localhost:8010/v4/restaurants?geohash=31.22967,121.4762&keyword=肯德基](http://localhost:8010/v4/restaurants?geohash=31.22967,121.4762&keyword=肯德基)
 
 #### 请求方式：
 ```
@@ -440,104 +452,49 @@ GET
 
 ```javascript
 [
-  {
-    name: "肯德基",
-    address: "上海市宝山区淞宝路155弄18号星月国际商务广场1层",
-    id: 1,
-    latitude: 31.38098,
-    longitude: 121.50146,
-    location: [
-      121.50146,
-      31.38098
-    ],
-    phone: "1232313124324",
-    category: "快餐便当/简餐",
-    supports: [
-      {
-        description: "已加入“外卖保”计划，食品安全有保障",
-        icon_color: "999999",
-        icon_name: "保",
-        id: 7,
-        name: "外卖保",
-        _id: "591bec73c2bbc84a6328a1e5"
-      },
-      {
-        description: "准时必达，超时秒赔",
-        icon_color: "57A9FF",
-        icon_name: "准",
-        id: 9,
-        name: "准时达",
-        _id: "591bec73c2bbc84a6328a1e4"
-      },
-      {
-        description: "该商家支持开发票，请在下单时填写好发票抬头",
-        icon_color: "999999",
-        icon_name: "票",
-        id: 4,
-        name: "开发票",
-        _id: "591bec73c2bbc84a6328a1e3"
-      }
-    ],
-    status: 0,
-    recent_order_num: 615,
-    rating_count: 389,
-    rating: 1.6,
-    promotion_info: "他依然有人有人有人有人有人",
-    piecewise_agent_fee: {
-      tips: "配送费约¥5"
-    },
-    opening_hours: [
-      "8:30/20:30"
-    ],
-    license: {
-      catering_service_license_image: "",
-      business_license_image: ""
-    },
-    is_new: true,
-    is_premium: true,
-    image_path: "/img/shop/15c1513a00615.jpg",
-    identification: {
-      registered_number: "",
-      registered_address: "",
-      operation_period: "",
-      licenses_scope: "",
-      licenses_number: "",
-      licenses_date: "",
-      legal_person: "",
-      identificate_date: null,
-      identificate_agency: "",
-      company_name: ""
-    },
-    float_minimum_order_amount: 20,
-    float_delivery_fee: 5,
-    distance: "19.5公里",
-    order_lead_time: "40分钟",
-    description: "好吃的",
-    delivery_mode: {
-      color: "57A9FF",
-      id: 1,
-      is_solid: true,
-      text: "蜂鸟专送"
-    },
-    activities: [
-      {
-        icon_name: "减",
-        name: "满减优惠",
-        description: "满30减5，满60减8",
-        icon_color: "f07373",
-        id: 1,
-        _id: "591bec73c2bbc84a6328a1e7"
-      },
-      {
-        icon_name: "特",
-        name: "优惠大酬宾",
-        description: "是对冯绍峰的上市房地产",
-        icon_color: "EDC123",
-        id: 2,
-        _id: "591bec73c2bbc84a6328a1e6"
-      }
-    ],
-  }
+    {
+        "name": "我要有位置的人",
+        "address": "广东省广州市番禺区汉溪大道东390号",
+        "id": 62,
+        "latitude": 23.006889,
+        "longitude": 113.352785,
+        "phone": "132588888888",
+        "category": "异国料理/西餐",
+        "supports": [],
+        "status": 0,
+        "recent_order_num": 168,
+        "rating_count": 925,
+        "rating": 4.3,
+        "slogan": "欢迎光临，用餐高峰请提前下单，谢谢",
+        "opening_hours": [
+            "06:30/23:30"
+        ],
+        "image_path": "169723bdb4f35.jpg",
+        "license": {
+            "catering_service_license_img": "",
+            "business_license_img": "",
+            "license_address": "",
+            "license_scope": "",
+            "license_number": "",
+            "license_date": "",
+            "legal_person": "",
+            "company_name": ""
+        },
+        "minimum_order_amount": 10,
+        "delivery_fee": 1,
+        "distance": "",
+        "order_lead_time": "",
+        "desc": "快来造作啊",
+        "delivery_mode": [],
+        "activities": [
+            8,
+            7,
+            5,
+            3,
+            9
+        ],
+        "__v": 0
+    }
   ... 共n条数据
 ]
 ```
@@ -547,11 +504,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/v2/restaurant/category
+http://localhost:8010/restaurants/categories
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/v2/restaurant/category](https://elm.cangdu.org/shopping/v2/restaurant/category)
+[http://localhost:8010/restaurants/categories](http://localhost:8010/restaurants/categories)
 
 #### 请求方式：
 ```
@@ -562,54 +519,57 @@ GET
 
 |参数|是否必选|类型|说明|
 |:-----|:-------:|:-----|:-----|
-|latitude      |N       |string   |纬度 |
-|longitude      |N       |string   |经度 |
+
 
 #### 返回示例：
 
 ```javascript
 [
-  {
-    count: 0,
-    id: 248,
-    image_url: "0e07558e305abfb2618ae760142222f9png",
-    level: 1,
-    name: "鲜花蛋糕",
-    sub_categories: [
-      {
-        count: 0,
-        id: 248,
-        image_url: "3edf3f4ef8ed1d300896c5b9178685ebpng",
-        level: 1,
-        name: "全部鲜花蛋糕",
-        _id: "591af9a4c434cf6a823d63d8"
-      },
-      {
-        count: 0,
-        id: 251,
-        image_url: "cf598de7338b4bf9dd2924736c4ec9d2png",
-        level: 2,
-        name: "鲜花",
-        _id: "591af9a4c434cf6a823d63d7"
-      },
-      {
-        count: 0,
-        id: 249,
-        image_url: "ac94b005c97ef158282326cb49389893png",
-        level: 2,
-        name: "蛋糕",
-        _id: "591af9a4c434cf6a823d63d6"
-      },
-      {
-        count: 0,
-        id: 250,
-        image_url: "512232422a83e25a2c0a5588b7b6e730png",
-        level: 2,
-        name: "面包",
-        _id: "591af9a4c434cf6a823d63d5"
-      }
-    ],
-  }
+    {
+        "count": 0,
+        "id": 248,
+        "image_url": "0e07558e305abfb2618ae760142222f9png",
+        "level": 1,
+        "name": "鲜花蛋糕",
+        "sub_categories": [
+            {
+                "count": 0,
+                "id": 248,
+                "image_url": "3edf3f4ef8ed1d300896c5b9178685ebpng",
+                "level": 1,
+                "name": "全部鲜花蛋糕",
+                "_id": "5c8272ff413d360edd724d5e"
+            },
+            {
+                "count": 0,
+                "id": 251,
+                "image_url": "cf598de7338b4bf9dd2924736c4ec9d2png",
+                "level": 2,
+                "name": "鲜花",
+                "_id": "5c8272ff413d360edd724d5d"
+            },
+            {
+                "count": 0,
+                "id": 249,
+                "image_url": "ac94b005c97ef158282326cb49389893png",
+                "level": 2,
+                "name": "蛋糕",
+                "_id": "5c8272ff413d360edd724d5c"
+            },
+            {
+                "count": 0,
+                "id": 250,
+                "image_url": "512232422a83e25a2c0a5588b7b6e730png",
+                "level": 2,
+                "name": "面包",
+                "_id": "5c8272ff413d360edd724d5b"
+            }
+        ],
+        "ids": [
+            248
+        ],
+        "__v": 0
+    },
   ...共n条数据
 ]
 ```
@@ -619,11 +579,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/v1/restaurants/delivery_modes
+http://localhost:8010/restaurants/deliveries
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/v1/restaurants/delivery_modes](https://elm.cangdu.org/shopping/v1/restaurants/delivery_modes)
+[http://localhost:8010/restaurants/deliveries](http://localhost:8010/restaurants/deliveries)
 
 #### 请求方式：
 ```
@@ -634,20 +594,19 @@ GET
 
 |参数|是否必选|类型|说明|
 |:-----|:-------:|:-----|:-----|
-|latitude      |N       |string   |纬度 |
-|longitude      |N       |string   |经度 |
+
 
 #### 返回示例：
 
 ```javascript
 [
-  {
-    color: "57A9FF",
-    id: 1,
-    is_solid: true,
-    text: "蜂鸟专送",
-    __v: 0
-  }
+    {
+        "color": "57A9FF",
+        "id": 1,
+        "is_solid": true,
+        "text": "蜂鸟专送",
+        "__v": 0
+    }
 ]
 ```
 
@@ -655,11 +614,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/v1/restaurants/activity_attributes
+http://localhost:8010/restaurants/activities
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/v1/restaurants/activity_attributes](https://elm.cangdu.org/shopping/v1/restaurants/activity_attributes)
+[http://localhost:8010/restaurants/activities](http://localhost:8010/restaurants/activities)
 
 #### 请求方式：
 ```
@@ -670,22 +629,22 @@ GET
 
 |参数|是否必选|类型|说明|
 |:-----|:-------:|:-----|:-----|
-|latitude      |N       |string   |纬度 |
-|longitude      |N       |string   |经度 |
+
 
 #### 返回示例：
 
 ```javascript
 [
-  {
-    description: "可使用支付宝、微信、手机QQ进行在线支付",
-    icon_color: "FF4E00",
-    icon_name: "付",
-    id: 3,
-    name: "在线支付",
-    ranking_weight: 2,
-    __v: 0
-  },
+    {
+        "description": "",
+        "icon_color": "3FBDE6",
+        "icon_name": "品",
+        "id": 8,
+        "name": "品牌商家",
+        "ranking_weight": 7,
+        "selected": true,
+        "__v": 0
+    },
   ...共n条数据
 ]
 ```
@@ -695,11 +654,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/restaurant/:shopid
+http://localhost:8010/restaurants/:restaurant_id/detail
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/restaurant/1](https://elm.cangdu.org/shopping/restaurant/1)
+[http://localhost:8010/restaurants/62/detail](http://localhost:8010/restaurants/62/detail)
 
 #### 请求方式：
 ```
@@ -710,109 +669,55 @@ GET
 
 |参数|是否必选|类型|说明|
 |:-----|:-------:|:-----|:-----|
-|shopid      |Y       |int   |餐馆id |
+|restaurant_id      |Y       |int   |餐馆id |
 
 
 #### 返回示例：
 
 ```javascript
 {
-  name: "肯德基",
-  address: "上海市宝山区淞宝路155弄18号星月国际商务广场1层",
-  id: 1,
-  latitude: 31.38098,
-  longitude: 121.50146,
-  location: [
-    121.50146,
-    31.38098
-  ],
-  phone: "1232313124324",
-  category: "快餐便当/简餐",
-  supports: [
-    {
-      description: "已加入“外卖保”计划，食品安全有保障",
-      icon_color: "999999",
-      icon_name: "保",
-      id: 7,
-      name: "外卖保",
-      _id: "591bec73c2bbc84a6328a1e5"
+    "_id": "5c87bd65ce35d1654452a451",
+    "name": "我要有位置的人",
+    "address": "广东省广州市番禺区汉溪大道东390号",
+    "id": 62,
+    "latitude": 23.006889,
+    "longitude": 113.352785,
+    "phone": "132588888888",
+    "category": "异国料理/西餐",
+    "__v": 0,
+    "supports": [],
+    "status": 0,
+    "recent_order_num": 168,
+    "rating_count": 925,
+    "rating": 4.3,
+    "slogan": "欢迎光临，用餐高峰请提前下单，谢谢",
+    "opening_hours": [
+        "06:30/23:30"
+    ],
+    "image_path": "169723bdb4f35.jpg",
+    "license": {
+        "catering_service_license_img": "",
+        "business_license_img": "",
+        "license_address": "",
+        "license_scope": "",
+        "license_number": "",
+        "license_date": "",
+        "legal_person": "",
+        "company_name": ""
     },
-    {
-      description: "准时必达，超时秒赔",
-      icon_color: "57A9FF",
-      icon_name: "准",
-      id: 9,
-      name: "准时达",
-      _id: "591bec73c2bbc84a6328a1e4"
-    },
-    {
-      description: "该商家支持开发票，请在下单时填写好发票抬头",
-      icon_color: "999999",
-      icon_name: "票",
-      id: 4,
-      name: "开发票",
-      _id: "591bec73c2bbc84a6328a1e3"
-    }
-  ],
-  status: 0,
-  recent_order_num: 615,
-  rating_count: 389,
-  rating: 1.6,
-  promotion_info: "他依然有人有人有人有人有人",
-  piecewise_agent_fee: {
-    tips: "配送费约¥5"
-  },
-  opening_hours: [
-    "8:30/20:30"
-  ],
-  license: {
-    catering_service_license_image: "",
-    business_license_image: ""
-  },
-  is_new: true,
-  is_premium: true,
-  image_path: "/img/shop/15c1513a00615.jpg",
-  identification: {
-    registered_number: "",
-    registered_address: "",
-    operation_period: "",
-    licenses_scope: "",
-    licenses_number: "",
-    licenses_date: "",
-    legal_person: "",
-    identificate_date: null,
-    identificate_agency: "",
-    company_name: ""
-  },
-  float_minimum_order_amount: 20,
-  float_delivery_fee: 5,
-  distance: "19.5公里",
-  order_lead_time: "40分钟",
-  description: "好吃的",
-  delivery_mode: {
-    color: "57A9FF",
-    id: 1,
-    is_solid: true,
-    text: "蜂鸟专送"
-  },
-  activities: [
-    {
-      icon_name: "减",
-      name: "满减优惠",
-      description: "满30减5，满60减8",
-      icon_color: "f07373",
-      id: 1,
-      _id: "591bec73c2bbc84a6328a1e7"
-    },
-    {
-      icon_name: "特",
-      name: "优惠大酬宾",
-      description: "是对冯绍峰的上市房地产",
-      icon_color: "EDC123",
-      id: 2,
-      _id: "591bec73c2bbc84a6328a1e6"
-    }
-  ],
+    "minimum_order_amount": 10,
+    "delivery_fee": 1,
+    "distance": "",
+    "order_lead_time": "",
+    "desc": "快来造作啊",
+    "delivery_mode": [],
+    "activities": [
+        8,
+        7,
+        5,
+        3,
+        9
+    ]
 }
 ```
 
@@ -821,7 +726,7 @@ GET
 
 #### 请求URL:  
 ```
-https://elm.cangdu.org/v1/addimg/:type
+http://localhost:8010/img/add
 ```
 
 #### 示例：
@@ -839,20 +744,14 @@ POST
 
 #### 返回示例：
 
-```javascript
-{
-  status: 1,
-  image_path: '15bfafa418322.jpeg'  
-  // 图片保存至七牛，图片全部地址为， https://elm.cangdu.org/img/15bfafa418322.jpeg
-}
-```
+图片上传到静态文件夹 /public/img 目录下
 
 
 ### 13、添加餐馆
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/addshop
+http://localhost:8010/restaurants/add
 ```
 
 #### 示例：
@@ -895,8 +794,38 @@ POST
 
 ```javascript
 {
-  status: 1,
-  sussess: '添加餐馆成功',
+    "status": 1,
+    "sussess": "添加餐馆成功",
+    "restaurantDetail": {
+        "name": "***的餐馆",
+        "address": "广外",
+        "id": 63,
+        "latitude": "1",
+        "longitude": "2",
+        "opening_hours": [
+            "8:30/20:30"
+        ],
+        "phone": "13222222222222",
+        "slogan": "欢迎光临，用餐高峰请提前下单，谢谢",
+        "rating": "4.9",
+        "rating_count": 195,
+        "status": 1,
+        "recent_order_num": 582,
+        "image_path": "2.jpg",
+        "category": "快餐便当/简餐",
+        "supports": [],
+        "delivery_mode": [],
+        "license": {
+            "legal_person": "",
+            "license_date": "",
+            "license_number": "",
+            "license_scope": "",
+            "license_address": "",
+            "company_name": "",
+            "business_license_img": "",
+            "catering_service_license_img": ""
+        }
+    }
 }
 ```
 
@@ -904,10 +833,11 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/addcategory
+http://localhost:8010/restaurants/menuCategories/:restaurant_id/add
 ```
 
 #### 示例：
+[http://localhost:8010/restaurants/menuCategories/62/add](http://localhost:8010/restaurants/menuCategories/62/add)
 
 
 #### 请求方式：
@@ -920,7 +850,6 @@ POST
 |参数|是否必选|类型|说明|
 |:-----|:-------:|:-----|:-----|
 |name      |Y       |string   | 种类 |
-|description      |Y       |string   | 描述 |
 |restaurant_id      |Y       |int   | 餐馆id |
 
 #### 返回示例：
@@ -936,11 +865,11 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/addfood
+http://localhost:8010/restaurants/foods/:restaurant_id/add
 ```
 
 #### 示例：
-
+[http://localhost:8010/restaurants/foods/62/add](http://localhost:8010/restaurants/foods/62/add)
 
 #### 请求方式：
 ```
@@ -952,7 +881,7 @@ POST
 |参数|是否必选|类型|说明|
 |:-----|:-------:|:-----|:-----|
 |restaurant_id      |Y       |int   | 餐馆ID |
-|category_id      |Y       |int   | 分类ID |
+|menu_id      |Y       |int   | 分类ID |
 |name      |Y       |string   | 食品名称 |
 |image_path      |Y       |string   | 图片地址 |
 |specs      |Y       |array   | 规格： [{specs: '默认',packing_fee: 0,price: 20,}]|
@@ -973,12 +902,12 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/v2/menu
+http://localhost:8010/shopping/v2/menu
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/shopping/v2/menu?restaurant_id=1](https://elm.cangdu.org/shopping/v2/menu?restaurant_id=1)
+[http://localhost:8010/shopping/v2/menu?restaurant_id=1](http://localhost:8010/shopping/v2/menu?restaurant_id=1)
 
 
 #### 请求方式：
@@ -1077,12 +1006,12 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/ugc/v2/restaurants/:restaurant_id/ratings
+http://localhost:8010/ugc/v2/restaurants/:restaurant_id/ratings
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/ugc/v2/restaurants/1/ratings?offset=0&limit=10](https://elm.cangdu.org/ugc/v2/restaurants/1/ratings?offset=0&limit=10)
+[http://localhost:8010/ugc/v2/restaurants/1/ratings?offset=0&limit=10](http://localhost:8010/ugc/v2/restaurants/1/ratings?offset=0&limit=10)
 
 
 #### 请求方式：
@@ -1139,12 +1068,12 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/ugc/v2/restaurants/:restaurant_id/ratings/scores
+http://localhost:8010/ugc/v2/restaurants/:restaurant_id/ratings/scores
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/ugc/v2/restaurants/1/ratings/scores](https://elm.cangdu.org/ugc/v2/restaurants/1/ratings/scores)
+[http://localhost:8010/ugc/v2/restaurants/1/ratings/scores](http://localhost:8010/ugc/v2/restaurants/1/ratings/scores)
 
 
 #### 请求方式：
@@ -1178,12 +1107,12 @@ service_score: 4.69295
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/ugc/v2/restaurants/:restaurant_id/ratings/tags
+http://localhost:8010/ugc/v2/restaurants/:restaurant_id/ratings/tags
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/ugc/v2/restaurants/1/ratings/tags](https://elm.cangdu.org/ugc/v2/restaurants/1/ratings/tags)
+[http://localhost:8010/ugc/v2/restaurants/1/ratings/tags](http://localhost:8010/ugc/v2/restaurants/1/ratings/tags)
 
 
 #### 请求方式：
@@ -1217,7 +1146,7 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/carts/checkout
+http://localhost:8010/carts/checkout
 ```
 
 #### 示例：
@@ -1291,12 +1220,12 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/carts/:cart_id/remarks
+http://localhost:8010/carts/:cart_id/remarks
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/v1/carts/1/remarks](https://elm.cangdu.org/v1/carts/1/remarks)
+[http://localhost:8010/carts/1/remarks](http://localhost:8010/carts/1/remarks)
 
 
 #### 请求方式：
@@ -1332,12 +1261,12 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/users/:user_id/addresses
+http://localhost:8010/users/:user_id/addresses
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/v1/users/1/addresses](https://elm.cangdu.org/v1/users/1/addresses)
+[http://localhost:8010/users/1/addresses](http://localhost:8010/users/1/addresses)
 
 
 #### 请求方式：
@@ -1384,7 +1313,7 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/captchas
+http://localhost:8010/captchas
 ```
 
 #### 示例：
@@ -1416,7 +1345,7 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/user
+http://localhost:8010/user
 ```
 
 #### 示例：
@@ -1462,7 +1391,7 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v2/login
+http://localhost:8010/v2/login
 ```
 
 #### 示例：
@@ -1512,7 +1441,7 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v2/signout
+http://localhost:8010/v2/signout
 ```
 
 #### 示例：
@@ -1544,7 +1473,7 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v2/changepassword
+http://localhost:8010/v2/changepassword
 ```
 
 #### 示例：
@@ -1580,7 +1509,7 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/users/:user_id/addresses
+http://localhost:8010/users/:user_id/addresses
 ```
 
 #### 示例：
@@ -1623,7 +1552,7 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/users/:user_id/addresses/:address_id
+http://localhost:8010/users/:user_id/addresses/:address_id
 ```
 
 #### 示例：
@@ -1656,7 +1585,7 @@ DELETE
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/users/:user_id/carts/:cart_id/orders
+http://localhost:8010/users/:user_id/carts/:cart_id/orders
 ```
 
 #### 示例：
@@ -1697,12 +1626,12 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/bos/v2/users/:user_id/orders
+http://localhost:8010/bos/v2/users/:user_id/orders
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/bos/v2/users/1/orders?limit=10&offset=0](https://elm.cangdu.org/bos/v2/users/1/orders?limit=10&offset=0)
+[http://localhost:8010/bos/v2/users/1/orders?limit=10&offset=0](http://localhost:8010/bos/v2/users/1/orders?limit=10&offset=0)
 
 
 #### 请求方式：
@@ -1804,12 +1733,12 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/bos/v1/users/:user_id/orders/:order_id/snapshot
+http://localhost:8010/bos/v1/users/:user_id/orders/:order_id/snapshot
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/bos/v1/users/1/orders/1/snapshot](https://elm.cangdu.org/bos/v1/users/1/orders/1/snapshot)
+[http://localhost:8010/bos/v1/users/1/orders/1/snapshot](http://localhost:8010/bos/v1/users/1/orders/1/snapshot)
 
 
 #### 请求方式：
@@ -1926,12 +1855,12 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v3/profile/explain
+http://localhost:8010/v3/profile/explain
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/v3/profile/explain](https://elm.cangdu.org/v3/profile/explain)
+[http://localhost:8010/v3/profile/explain](http://localhost:8010/v3/profile/explain)
 
 
 #### 请求方式：
@@ -1958,12 +1887,12 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/promotion/v2/users/:user_id/hongbaos
+http://localhost:8010/promotion/v2/users/:user_id/hongbaos
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/promotion/v2/users/1/hongbaos?limit=20&offset=0](https://elm.cangdu.org/promotion/v2/users/1/hongbaos?limit=20&offset=0)
+[http://localhost:8010/promotion/v2/users/1/hongbaos?limit=20&offset=0](http://localhost:8010/promotion/v2/users/1/hongbaos?limit=20&offset=0)
 
 
 #### 请求方式：
@@ -2015,12 +1944,12 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/promotion/v2/users/:user_id/expired_hongbaos
+http://localhost:8010/promotion/v2/users/:user_id/expired_hongbaos
 ```
 
 #### 示例：
 
-[https://elm.cangdu.org/promotion/v2/users/1/expired_hongbaos?limit=20&offset=0](https://elm.cangdu.org/promotion/v2/users/1/expired_hongbaos?limit=20&offset=0)
+[http://localhost:8010/promotion/v2/users/1/expired_hongbaos?limit=20&offset=0](http://localhost:8010/promotion/v2/users/1/expired_hongbaos?limit=20&offset=0)
 
 
 #### 请求方式：
@@ -2073,7 +2002,7 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/users/:user_id/hongbao/exchange
+http://localhost:8010/users/:user_id/hongbao/exchange
 ```
 
 #### 示例：
@@ -2108,7 +2037,7 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/admin/login
+http://localhost:8010/admin/login
 ```
 
 #### 示例：
@@ -2142,7 +2071,7 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/admin/singout
+http://localhost:8010/admin/singout
 ```
 
 #### 示例：
@@ -2176,7 +2105,7 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/admin/info
+http://localhost:8010/admin/info
 ```
 
 #### 示例：
@@ -2216,11 +2145,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/statis/api/:date/count
+http://localhost:8010/statis/api/:date/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/statis/api/2017-05-29/count](https://elm.cangdu.org/statis/api/2017-05-29/count)
+[http://localhost:8010/statis/api/2017-05-29/count](http://localhost:8010/statis/api/2017-05-29/count)
 
 #### 请求方式：
 ```
@@ -2251,11 +2180,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/statis/api/count
+http://localhost:8010/statis/api/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/statis/api/count](https://elm.cangdu.org/statis/api/count)
+[http://localhost:8010/statis/api/count](http://localhost:8010/statis/api/count)
 
 #### 请求方式：
 ```
@@ -2285,11 +2214,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/statis/user/:date/count
+http://localhost:8010/statis/user/:date/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/statis/user/2017-05-29/count](https://elm.cangdu.org/statis/user/2017-05-29/count)
+[http://localhost:8010/statis/user/2017-05-29/count](http://localhost:8010/statis/user/2017-05-29/count)
 
 #### 请求方式：
 ```
@@ -2320,11 +2249,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/users/count
+http://localhost:8010/users/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/v1/users/count](https://elm.cangdu.org/v1/users/count)
+[http://localhost:8010/users/count](http://localhost:8010/users/count)
 
 #### 请求方式：
 ```
@@ -2355,11 +2284,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/statis/order/:date/count
+http://localhost:8010/statis/order/:date/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/statis/order/2017-05-29/count](https://elm.cangdu.org/statis/order/2017-05-29/count)
+[http://localhost:8010/statis/order/2017-05-29/count](http://localhost:8010/statis/order/2017-05-29/count)
 
 #### 请求方式：
 ```
@@ -2389,11 +2318,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/bos/orders/count
+http://localhost:8010/bos/orders/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/bos/orders/count](https://elm.cangdu.org/bos/orders/count)
+[http://localhost:8010/bos/orders/count](http://localhost:8010/bos/orders/count)
 
 
 #### 请求方式：
@@ -2424,11 +2353,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/admin/all
+http://localhost:8010/admin/all
 ```
 
 #### 示例：
-[https://elm.cangdu.org/admin/all?offset=0&limit=20](https://elm.cangdu.org/admin/all?offset=0&limit=20)
+[http://localhost:8010/admin/all?offset=0&limit=20](http://localhost:8010/admin/all?offset=0&limit=20)
 
 #### 请求方式：
 ```
@@ -2472,11 +2401,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/admin/count
+http://localhost:8010/admin/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/admin/count](https://elm.cangdu.org/admin/count)
+[http://localhost:8010/admin/count](http://localhost:8010/admin/count)
 
 
 #### 请求方式：
@@ -2507,11 +2436,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/getcategory/:restaurant_id
+http://localhost:8010/shopping/getcategory/:restaurant_id
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/getcategory/2](https://elm.cangdu.org/shopping/getcategory/2)
+[http://localhost:8010/shopping/getcategory/2](http://localhost:8010/shopping/getcategory/2)
 
 
 #### 请求方式：
@@ -2553,11 +2482,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/restaurants/count
+http://localhost:8010/shopping/restaurants/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/restaurants/count](https://elm.cangdu.org/shopping/restaurants/count)
+[http://localhost:8010/shopping/restaurants/count](http://localhost:8010/shopping/restaurants/count)
 
 
 #### 请求方式：
@@ -2591,7 +2520,7 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/updateshop
+http://localhost:8010/shopping/updateshop
 ```
 
 #### 示例：
@@ -2631,7 +2560,7 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/restaurant/:restaurant_id
+http://localhost:8010/shopping/restaurant/:restaurant_id
 ```
 
 #### 示例：
@@ -2668,11 +2597,11 @@ DELETE
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/v2/foods
+http://localhost:8010/shopping/v2/foods
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/v2/foods?offset=0&limit=20&restaurant_id=2](https://elm.cangdu.org/shopping/v2/foods?offset=0&limit=20&restaurant_id=2)
+[http://localhost:8010/shopping/v2/foods?offset=0&limit=20&restaurant_id=2](http://localhost:8010/shopping/v2/foods?offset=0&limit=20&restaurant_id=2)
 
 #### 请求方式：
 ```
@@ -2759,11 +2688,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/v2/foods/count
+http://localhost:8010/shopping/v2/foods/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/v2/foods/count](https://elm.cangdu.org/shopping/v2/foods/count)
+[http://localhost:8010/shopping/v2/foods/count](http://localhost:8010/shopping/v2/foods/count)
 
 
 #### 请求方式：
@@ -2795,11 +2724,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/v2/menu/:category_id
+http://localhost:8010/shopping/v2/menu/:category_id
 ```
 
 #### 示例：
-[https://elm.cangdu.org/shopping/v2/menu/1](https://elm.cangdu.org/shopping/v2/menu/1)
+[http://localhost:8010/shopping/v2/menu/1](http://localhost:8010/shopping/v2/menu/1)
 
 
 #### 请求方式：
@@ -2838,7 +2767,7 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/v2/updatefood
+http://localhost:8010/shopping/v2/updatefood
 ```
 
 #### 示例：
@@ -2877,7 +2806,7 @@ POST
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/shopping/v2/food/:food_id
+http://localhost:8010/shopping/v2/food/:food_id
 ```
 
 #### 示例：
@@ -2913,11 +2842,11 @@ DELETE
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/users/list
+http://localhost:8010/users/list
 ```
 
 #### 示例：
-[https://elm.cangdu.org/v1/users/list?offset=0&limit=20](https://elm.cangdu.org/v1/users/list?offset=0&limit=20)
+[http://localhost:8010/users/list?offset=0&limit=20](http://localhost:8010/users/list?offset=0&limit=20)
 
 #### 请求方式：
 ```
@@ -2974,11 +2903,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/bos/orders
+http://localhost:8010/bos/orders
 ```
 
 #### 示例：
-[https://elm.cangdu.org/bos/orders?offset=0&limit=20](https://elm.cangdu.org/bos/orders?offset=0&limit=20)
+[http://localhost:8010/bos/orders?offset=0&limit=20](http://localhost:8010/bos/orders?offset=0&limit=20)
 
 #### 请求方式：
 ```
@@ -3008,11 +2937,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/addresse/:address_id
+http://localhost:8010/addresse/:address_id
 ```
 
 #### 示例：
-[https://elm.cangdu.org/v1/addresse/1](https://elm.cangdu.org/v1/addresse/1)
+[http://localhost:8010/addresse/1](http://localhost:8010/addresse/1)
 
 #### 请求方式：
 ```
@@ -3040,11 +2969,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/v1/user/city/count
+http://localhost:8010/user/city/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/v1/user/city/count](https://elm.cangdu.org/v1/user/city/count)
+[http://localhost:8010/user/city/count](http://localhost:8010/user/city/count)
 
 #### 请求方式：
 ```
@@ -3078,11 +3007,11 @@ GET
 
 #### 请求URL：
 ```
-https://elm.cangdu.org/statis/admin/:date/count
+http://localhost:8010/statis/admin/:date/count
 ```
 
 #### 示例：
-[https://elm.cangdu.org/statis/admin/2017-05-30/count](https://elm.cangdu.org/statis/admin/2017-05-30/count)
+[http://localhost:8010/statis/admin/2017-05-30/count](http://localhost:8010/statis/admin/2017-05-30/count)
 
 #### 请求方式：
 ```
